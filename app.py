@@ -3,7 +3,7 @@ from keras.models import load_model
 import numpy as np
 import tensorflow as tf
 from keras.preprocessing import image
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 
 model=load_model('model.h5')
 app = Flask(__name__)
