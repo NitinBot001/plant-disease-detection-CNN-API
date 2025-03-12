@@ -2,11 +2,13 @@ from flask import Flask, request, jsonify, render_template
 from keras.models import load_model
 import numpy as np
 import tensorflow as tf
+from flask_cors import CORS
 from keras.preprocessing import image
 from werkzeug.utils import secure_filename
 
 model=load_model('model.h5')
 app = Flask(__name__)
+CORS(app)
 
 graph = tf.get_default_graph()
 @app.route('/')
